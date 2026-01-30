@@ -50,7 +50,7 @@ const pricingPlans = [
 export function Pricing() {
   return (
     <section id="pricing" className="container py-8 md:py-12 lg:py-24 mx-auto max-w-7xl px-4 sm:px-8">
-      <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center mb-10">
+      <div className="mx-auto flex max-w-232 flex-col items-center space-y-4 text-center mb-10">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl font-bold">
           Simple, Transparent Pricing
         </h2>

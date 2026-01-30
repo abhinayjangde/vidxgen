@@ -28,7 +28,7 @@ const features = [
 export function Features() {
   return (
     <section id="features" className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24 mx-auto max-w-7xl px-4 sm:px-8">
-      <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+      <div className="mx-auto flex max-w-232 flex-col items-center space-y-4 text-center">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl font-bold">
           Features
         </h2>
@@ -36,7 +36,7 @@ export function Features() {
           Everything you need to dominate short-form video content.
         </p>
       </div>
-      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-5xl md:grid-cols-3">
         {features.map((feature) => (
             <Card key={feature.title} className="flex flex-col justify-between">
                 <CardHeader>
