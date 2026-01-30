@@ -1,8 +1,21 @@
+'use client'
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useUser, SignUpButton } from '@clerk/nextjs';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
+  const { isSignedIn } = useUser();
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    if (isSignedIn) {
+      router.push('/dashboard');
+    }
+    // If not signed in, the SignUpButton wrapper will handle opening the modal
+  };
+
   return (
     <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
       <div className="container flex max-w-5xl flex-col items-center gap-4 text-center mx-auto">
@@ -20,11 +33,17 @@ export function Hero() {
           Automate your content creation workflow. Connect your favorite platforms and let VidxGen handle the rest.
         </p>
         <div className="space-x-4">
-          <Link href="/login">
-             <Button size="lg" className="h-11 px-8">
+          {isSignedIn ? (
+            <Button size="lg" className="h-11 px-8" onClick={handleGetStarted}>
+              Get Started
+            </Button>
+          ) : (
+            <SignUpButton mode="modal">
+              <Button size="lg" className="h-11 px-8">
                 Get Started
-             </Button>
-          </Link>
+              </Button>
+            </SignUpButton>
+          )}
           <Link href="#features">
             <Button variant="outline" size="lg" className="h-11 px-8">
                 Learn More

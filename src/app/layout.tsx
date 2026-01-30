@@ -56,6 +56,12 @@ export default function RootLayout({
                 </SignUpButton>
               </SignedOut>
               <SignedIn>
+                <a 
+                  href="/dashboard"
+                  className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                >
+                  Dashboard
+                </a>
                 <UserButton
                   appearance={{
                     elements: {
